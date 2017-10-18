@@ -5,7 +5,7 @@
             <header class="header">
 
             </header>
-
+            <Bread />
             <div class="container">
                 <div class="content">
                     <keep-alive>
@@ -21,6 +21,7 @@
 
 <script>
 import Sider from '../components/Layout/Sider'
+import Bread from '../components/Layout/Bread'
 
 export default {
     data() {
@@ -30,7 +31,8 @@ export default {
 
     },
     components: {
-        Sider
+        Sider,
+        Bread
     },
     methods: {
 

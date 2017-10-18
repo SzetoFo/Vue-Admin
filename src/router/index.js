@@ -6,6 +6,9 @@ import UserIndex from '@/pages/User/index'
 
 Vue.use(Router)
 
+
+
+
 export default new Router({
   routes: [
     {
@@ -18,23 +21,17 @@ export default new Router({
       meta:{title:'主页'},
       children:[
         {
+          alias: '',
           path: '/dashboard',
           name: 'dashboard',
           component: Dashboard,
           meta: { title: 'Dashboard', },
         },
         {
-          path: '/User',
-          name: 'User',
-          meta: { title: 'User', },
-          children:[
-            {
-              path: '/User/index',
-              name:'userIndex',
-              component:UserIndex,
-              meta: { title: 'UserIndex Page', },
-            }
-          ]
+          path: '/user/index',
+          name:'userIndex',
+          component:UserIndex,
+          meta: { title: 'UserIndex Page', },
         }
       ]
     }
