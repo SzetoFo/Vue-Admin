@@ -6,7 +6,7 @@
             <span>{{appName}}</span>
         </div>
 
-        <Menu theme="light"
+        <Menu theme="light" @on-select="handleMenuSelectChange"
             width="auto"
             active-name="/index">
 
@@ -21,11 +21,11 @@
                     <template slot="title">
                         <Icon type="ios-people"></Icon>
                         {{menu.title}}
-    
                     </template>
-
-                    <MenuItem name="2-1">新增用户</MenuItem>
-                    <MenuItem name="2-2">活跃用户</MenuItem>
+                    <MenuItem  v-for="sub in menu.children" :name="sub.key" :key="sub.key">
+                     <Icon :type="sub.icon"></Icon>
+                     <span>{{sub.title}}</span>
+                    </MenuItem>
                 </Submenu>
 
             </template>
@@ -46,6 +46,11 @@ export default {
     },
     created() {
 
+    },
+    methods:{
+        handleMenuSelectChange(key){
+            this.$router.push(key)
+        }
     }
 }
 </script>

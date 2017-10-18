@@ -30,7 +30,7 @@ export default new Router({
           children:[
             {
               path: '/User/index',
-              name:'userindex',
+              name:'userIndex',
               component:UserIndex,
               meta: { title: 'UserIndex Page', },
             }
